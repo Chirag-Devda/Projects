@@ -1,0 +1,68 @@
+@media (max-width: 1250px) {
+  .left {
+    z-index: 1;
+    left: -120%;
+    position: absolute;
+    width: 428px;
+    background: black;
+    padding: 0;
+  }
+  .right {
+    width: 100vw;
+    margin: 0;
+  }
+  .playbar {
+    width: 97vw;
+  }
+  .menu {
+    display: block;
+  }
+  .close img {
+    display: block;
+  }
+  .cardContainer {
+    margin: 0;
+    justify-content: center;
+  }
+  .cards {
+    width: 40vw;
+  }
+  .playbar {
+    width: calc(100vw - 36px);
+  }
+  .seekbar {
+    width: calc(100vw - 62px);
+  }
+  .playbar-featuries {
+    margin: 20px 0px;
+    flex-direction: column;
+    gap: 23px;
+    align-items: center;
+  }
+  .songinfo {
+    width: 80%;
+    text-align: center;
+  }
+  .songtimer {
+    text-align: center;
+  }
+  .timvol {
+    gap: 9px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 440px) {
+  .cards {
+    width: 85vw;
+  }
+}
+@media (max-width: 440px) {
+  .left {
+    z-index: 1;
+    left: -120%;
+    position: absolute;
+    width: 100vw;
+    background: black;
+    padding: 0;
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/Utility.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="left mr-1 pr-1">
+        <div class="close">
+          <img src="SVG/cancel.svg" alt="cancel" />
+        </div>
+        <div class="Home bg-grey rounded mr-1 pr-1">
+          <div class="logo">
+            <img class="invert" src="SVG/logo.svg" alt="Spotify-logo" />
+          </div>
+          <ul>
+            <li class="pr-1">
+              <img class="invert icons-width" src="SVG/Home.svg" alt="Home" />
+              <span>Home</span>
+            </li>
+            <li class="pr-1">
+              <img
+                class="icons-width search-icon invert"
+                src="SVG/Search.svg"
+                alt="Search"
+              />
+              <span class="search-icon-span"> Search</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="Library bg-grey rounded mr-1 pr-1">
+          <div class="Library-heading">
+            <img
+              class="invert icons-width"
+              src="SVG/Library.svg"
+              alt="Library"
+            />
+            <h2>Your Library</h2>
+          </div>
+          <div class="songlists">
+            <ul></ul>
+          </div>
+          <div class="library-footer">
+            <div>
+              <a href="https://www.spotify.com/in-en/legal/"
+                ><span>Legal</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/in-en/privacy/"
+                ><span>Privacy Center</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/"
+                ><span>Privacy Policy</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/in-en/legal/cookies-policy/"
+                ><span>Cookies</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"
+                ><span>About Ads</span></a
+              >
+            </div>
+            <div>
+              <a href="https://www.spotify.com/in-en/accessibility/"
+                ><span>Accessibility</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right bg-grey rounded">
+        <div class="header">
+          <div class="nav">
+            <img src="SVG/menu.svg" alt="menu" class="menu" />
+            <div class="left-arrow">
+              <img
+                class="invert"
+                src="SVG/nav-left-arrow.svg"
+                alt="left-side-arrow"
+              />
+            </div>
+            <div class="right-arrow">
+              <img
+                class="invert"
+                src="SVG/nav-right-arrow.svg"
+                alt="right-side-arrow"
+              />
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="Sign-in">Sign up</button>
+            <button class="Login-in">Login in</button>
+          </div>
+        </div>
+        <div class="spotifyPlaylists">
+          <h1>Spotify Playlists</h1>
+          <div class="cardContainer"></div>
+          <div class="playbar">
+            <div class="seekbar">
+              <div class="circle"></div>
+            </div>
+            <div class="playbar-featuries">
+              <div class="songinfo"></div>
+              <div class="songbuttons">
+                <img id="previous" src="SVG/previous.svg" alt="" />
+                <img id="play" src="SVG/play.svg" alt="" />
+                <img id="next" src="SVG/next.svg" alt="" />
+              </div>
+              <div class="timvol">
+                <div class="songtimer">00/00</div>
+                <div class="volume">
+                  <img src="SVG/volume.svg" alt="volume" />
+                  <input type="range" name="volume" id="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-container">
+      <div class="details">
+        <form action="">
+          <div class="input flex flex-col">
+            <span>Username *</span>
+            <input
+              type="text"
+              name="name"
+              id="username"
+              class="inputBox"
+              placeholder="Enter Username"
+              required
+            />
+          </div>
+          <div class="input flex flex-col">
+            <span>Email *</span>
+            <input
+              type="email"
+              name="name"
+              id="email"
+              class="inputBox"
+              placeholder="Enter Email-id"
+              required
+              autocomplete="email"
+            />
+          </div>
+          <div class="input flex flex-col">
+            <span>Password *</span>
+            <input
+              type="password"
+              name="name"
+              id="password"
+              class="inputBox"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+          <div class="input flex flex-col">
+            <span>Confirm Password *</span>
+            <input
+              type="password"
+              name="name"
+              id="new-password"
+              class="inputBox"
+              placeholder="Enter confirm password"
+              required
+            />
+          </div>
+          <div class="confirm">
+            <input type="submit" value="submit" id="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

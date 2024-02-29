@@ -1,0 +1,54 @@
+.login-container {
+  display: none;
+  box-shadow: 0px 0px 18px 6px;
+  box-shadow: azure;
+  z-index: 0;
+  background: #1d1b1b;
+  border-radius: 45px;
+  border: 1px solid #fffefe;
+  opacity: 0.7;
+  width: 42vw;
+  height: 60vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.details {
+  max-width: 80%;
+  position: relative;
+  margin: 30px auto;
+}
+.input {
+  gap: 5px;
+}
+.inputBox {
+  font-weight: 700;
+  font-family: system-ui;
+  font-size: 14px;
+  width: 69%;
+  padding: 4px;
+  border: 2px solid grey;
+  border-radius: 7px;
+  background: white;
+}
+.input > span {
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+#submit {
+  border-radius: 16px;
+  border: 1px solid black;
+  margin-top: 17px;
+  padding: 8px;
+  cursor: pointer;
+}
+.userprofile img {
+  cursor: pointer;
+  width: 30px;
+}
+.username {
+  font-size: 27px;
+}
