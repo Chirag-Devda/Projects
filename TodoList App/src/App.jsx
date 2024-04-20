@@ -16,39 +16,6 @@ function App() {
       unfinishedArrayState: "uncompleted",
     },
   ]);
-  useEffect(() => {
-    const completedFetched = JSON.parse(localStorage.getItem("completed"));
-    if (completedFetched) {
-      setcompleted(completedFetched);
-    }
-
-    const uncompletedFetched = JSON.parse(localStorage.getItem("uncompleted"));
-    if (uncompletedFetched) {
-      setuncompleted(uncompletedFetched);
-    }
-
-    const TodosFetched = JSON.parse(localStorage.getItem("Todos"));
-    if (TodosFetched.length) {
-      setTodos(TodosFetched);
-    }
-  }, []);
-
-  // Save data to local storage
-  const savetoLS = () => {
-    localStorage.setItem("uncompleted", JSON.stringify(uncompleted));
-    localStorage.setItem("completed", JSON.stringify(completed));
-    localStorage.setItem("Todos", JSON.stringify(Todos));
-  };
-
-  // running function and saving data instantly
-  useEffect(() => {
-    handlcompleted();
-    handluncompleted();
-  }, [Todos]);
-  useEffect(() => {
-    savetoLS();
-  }, [completed]);
-
   // Function to get the array based on the showfinished state and BothArray state
   const getArrayToShow = () => {
     if (showfinished) {
@@ -64,22 +31,46 @@ function App() {
 
   const handlcompleted = () => {
     const t = true;
-    let iscompletedTrue = Todos.filter((item) => {
-      return item.iscompleted === t;
-    });
-    setcompleted(iscompletedTrue);
+    savetoLS();
+    if (showfinished) {
+      let iscompletedTrue = Todos.filter((item) => {
+        return item.iscompleted === t;
+      });
+      setcompleted(iscompletedTrue);
+    }
   };
   const handluncompleted = () => {
-    let isucompletedFalse = Todos.filter((item) => {
+    let isucompletedTrue = Todos.filter((item) => {
       return !item.iscompleted;
     });
-    setuncompleted(isucompletedFalse);
+    setuncompleted(isucompletedTrue);
+  };
+
+  useEffect(() => {
+    let todostring = localStorage.getItem("uncompleted");
+    if (todostring) {
+      let stored = JSON.parse(localStorage.getItem("uncompleted"));
+      setTodos(stored);
+    }
+
+    let completedetring = localStorage.getItem("completed");
+    if (completedetring) {
+      let stored = JSON.parse(localStorage.getItem("completed"));
+      setTodos(stored);
+    }
+    handluncompleted();
+  }, []);
+
+  const savetoLS = () => {
+    localStorage.setItem("uncompleted", JSON.stringify(uncompleted));
+    localStorage.setItem("completed", JSON.stringify(completed));
   };
 
   const handleAdd = () => {
     setTodos([...Todos, { id: uuidv4(), todo, iscompleted: false }]);
     settodo("");
-    savetoLS();
+    console.log(completed, `this is completed array`);
+    console.log(uncompleted, "this is uncompleted array");
   };
 
   const handleEdit = (e, id) => {
@@ -91,11 +82,13 @@ function App() {
       return item.id !== id;
     });
     setTodos(newtodos);
+    savetoLS();
   };
 
   document.onkeydown = function EnterToAddTodo(e) {
     if (e.keyCode == 13) {
       handleAdd();
+      savetoLS();
     }
   };
 
@@ -108,6 +101,7 @@ function App() {
       return item.id !== id;
     });
     setcompleted(newcompleted);
+    savetoLS();
   };
 
   const handlechange = (e) => {
@@ -122,10 +116,12 @@ function App() {
     let newtodos = [...Todos];
     newtodos[index].iscompleted = !newtodos[index].iscompleted;
     setTodos(newtodos);
+    savetoLS();
   };
 
   const togglefinished = () => {
     setshowfinished(!showfinished);
+    handlcompleted();
   };
 
   return (
