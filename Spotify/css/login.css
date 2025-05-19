@@ -3,10 +3,9 @@
   box-shadow: 0px 0px 18px 6px;
   box-shadow: azure;
   z-index: 0;
-  background: #1d1b1b;
+  background: #fff;
   border-radius: 45px;
   border: 1px solid #fffefe;
-  opacity: 0.7;
   width: 42vw;
   height: 60vh;
   position: absolute;
@@ -28,23 +27,33 @@
   font-size: 14px;
   width: 69%;
   padding: 4px;
-  border: 2px solid grey;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 7px;
-  background: white;
+  background: transparent;
 }
+
 .input > span {
   margin-top: 3px;
   font-size: 20px;
   font-weight: 500;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.confirm {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 #submit {
-  border-radius: 16px;
+  font-size: 15px;
+  border-radius: 20px;
   border: 1px solid black;
-  margin-top: 17px;
-  padding: 8px;
+  margin-top: 37px;
+  padding: 15px;
   cursor: pointer;
+  background-color: black;
+  color: white;
 }
+
 .userprofile img {
   cursor: pointer;
   width: 30px;

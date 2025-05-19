@@ -267,11 +267,7 @@ function LoginFun() {
 
   // Click on login button
   let LoginIn = document.querySelector(".Login-in");
-  let SignIn = document.querySelector(".Sign-in");
   LoginIn.addEventListener("click", (e) => {
-    document.querySelector(".login-container").style.display = "inherit";
-  });
-  SignIn.addEventListener("click", (e) => {
     document.querySelector(".login-container").style.display = "inherit";
   });
 
@@ -322,30 +318,3 @@ function LoginFun() {
   });
 }
 LoginFun();
-// // Call the Login function after the DOM is fully loaded
-
-// function profile() {
-//   var buttons = document.querySelector(".buttons");
-
-//   let LoginIn = document.querySelector(".Login-in");
-//   LoginIn.addEventListener("click", (e) => {
-//     document.querySelector(".login-container").style.display = "inherit";
-//   });
-
-//   // Click on Submit button
-//   let Submit = document.querySelector("#submit");
-
-//   //  Event Click on Submit button
-//   Submit.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     var usernametextinput = document.querySelector("#username");
-//     var userName = usernametextinput.value;
-
-//     buttons.innerHTML = `
-//  <div class="username">Chirag</div>
-//             <div class="userprofile"><img src="./SVG/user.svg" alt="" /></div>
-//       `;
-//     console.log(buttons.innerHTML);
-//   });
-// }
-// profile();
