@@ -20,7 +20,7 @@ function formatTime(seconds) {
 }
 
 async function getsongs(folder) {
-  let a = await fetch(`./${folder}`);
+  let a = await fetch(`/${folder}`);
   currentfolder = folder;
   let response = await a.text();
   let div = document.createElement("div");
@@ -98,7 +98,7 @@ const playmusic = (track, pause = false) => {
 };
 
 async function DisplayAlbums() {
-  let a = await fetch("./music/");
+  let a = await fetch("/music/");
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -110,7 +110,7 @@ async function DisplayAlbums() {
     if (e.href.includes("music/")) {
       let foldername = e.title;
       // Get the metadata of the folder
-      let a = await fetch(`./music/${foldername}/info.json`);
+      let a = await fetch(`/music/${foldername}/info.json`);
       let response = await a.json();
       cardContainer.innerHTML =
         cardContainer.innerHTML +
@@ -119,7 +119,7 @@ async function DisplayAlbums() {
         <img src="SVG/playlist-play.svg" alt="play-playlists" />
         </div>
               <img
-              src=./music/${foldername}/cover.jpg
+              src="/music/${foldername}/cover.jpg
               alt="hello"
               />
               <h2>${response.Title}</h2>
