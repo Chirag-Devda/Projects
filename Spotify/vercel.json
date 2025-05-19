@@ -1,8 +1,4 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/music/(.*)", "dest": "/music/$1" }
-  ],
   "headers": [
     {
       "source": "/music/(.*)",
